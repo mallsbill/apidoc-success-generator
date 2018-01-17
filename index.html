@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>apiDoc - apiSuccess generator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2>apiDoc - apiSuccess generator</h2>
+			<div class="well well-sm">Generate apiSuccess lines for an <a href="http://apidocjs.com/">apiDoc</a> documentation from a JSON string</div>
+			<div class="form-group">
+				<label for="source">JSON</label>
+				<textarea id="source" class="form-control" rows="5"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="prefix">Prefix</label>
+				<select id="prefix" class="form-control" >
+					<option value=" * ">* (Java, JavaScript, PHP, ...)</option>
+					<option value="">None</option>
+					<option value="# "># (Elixir)</option>
+					<option value="% ">% (Erlang)</option>
+				</select>
+			</div>
+			<div id="error" class="alert alert-danger hide">Unable to parse JSON</div>
+			<button id="generate" class="btn btn-success" >Generate</button>
+		</div>
+		<br />
+		<br />
+		<div class="row">
+			<div class="form-group">
+				<label for="result">Result</label>
+				<button id="copy" class="btn btn-xs pull-right" data-clipboard-target="#result" >
+					<span class="glyphicon glyphicon-copy" aria-hidden="true"></span> Copy to clipboard
+				</button>
+				<textarea id="result" class="form-control" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
